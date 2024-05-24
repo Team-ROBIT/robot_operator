@@ -20,26 +20,81 @@
 
 namespace robot_operator
 {
-  using namespace Qt;
+using namespace Qt;
 
-  /*****************************************************************************
-  ** Implementation [MainWindow]
-  *****************************************************************************/
+/*****************************************************************************
+** Implementation [MainWindow]
+*****************************************************************************/
 
-  MainWindow::MainWindow(int argc, char** argv, QWidget* parent) : QMainWindow(parent), qnode(argc, argv)
+MainWindow::MainWindow(int argc, char** argv, QWidget* parent) : QMainWindow(parent), qnode(argc, argv)
+{
+  ui.setupUi(this);  // Calling this incidentally connects all ui's triggers to on_...() callbacks in this class.
+  qnode.init();
+
+  QObject::connect(&qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
+  QObject::connect(&qnode, SIGNAL(sigRcvImg(int)), this, SLOT(slotUpdateImage(int)));
+  QObject::connect(&qnode, SIGNAL(sigReadTopic()), this, SLOT(slotUpdateTopic()));
+  qnode.updateTopic();
+  init = true;
+}
+
+MainWindow::~MainWindow()
+{
+}
+
+void MainWindow::slotUpdateImage(int num)
+{
+  QImage qImage((const unsigned char*)(qnode.img_raw[num].data), qnode.img_raw[num].cols, qnode.img_raw[num].rows,
+                QImage::Format_RGB888);
+  switch (num)
   {
-    ui.setupUi(this);  // Calling this incidentally connects all ui's triggers to on_...() callbacks in this class.
-    qnode.init();
-
-    QObject::connect(&qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
+    case 0:
+      ui.img1->setPixmap(QPixmap::fromImage(qImage));
+      break;
+    case 1:
+      ui.img2->setPixmap(QPixmap::fromImage(qImage));
+      break;
+    case 2:
+      ui.img3->setPixmap(QPixmap::fromImage(qImage));
+      break;
+    default:
+      break;
   }
+}
 
-  MainWindow::~MainWindow()
+void MainWindow::slotUpdateTopic()
+{
+  ui.topic_img2->clear();
+  ui.topic_img3->clear();
+  ui.topic_img2->addItems(qnode.topicList);
+  ui.topic_img3->addItems(qnode.topicList);
+}
+
+void MainWindow::on_topic_img2_currentIndexChanged(int index)
+{
+  if (init)
   {
+    QString topic = ui.topic_img2->currentText();
+    qnode.img_topic[1] = topic.toStdString();
+    qnode.changeTopic(1);
   }
+}
 
-  /*****************************************************************************
-  ** Functions
-  *****************************************************************************/
+void MainWindow::on_topic_img3_currentIndexChanged(int index)
+{
+  if (init)
+  {
+    QString topic = ui.topic_img3->currentText();
+    qnode.img_topic[2] = topic.toStdString();
+    qnode.changeTopic(2);
+  }
+}
 
-}  // namespace
+void MainWindow::on_update_clicked()
+{
+  init = false;
+  qnode.updateTopic();
+  init = true;
+}
+
+}  // namespace robot_operator

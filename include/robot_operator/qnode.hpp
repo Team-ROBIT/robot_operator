@@ -24,34 +24,55 @@
 #include <string>
 #include <QThread>
 #include <QStringListModel>
+#include <sensor_msgs/Image.h>
+#include <boost/bind.hpp>
+#include <cv_bridge/cv_bridge.h>
+#include <QStringList>
 
-/*****************************************************************************
-** Namespaces
-*****************************************************************************/
+#define MAIN_WEIGHT 1600
+#define MAIN_HEIGHT 900
+#define SUB_WEIGHT 800
+#define SUB_HEIGHT 450
 
 namespace robot_operator
 {
-  /*****************************************************************************
-  ** Class
-  *****************************************************************************/
+/*****************************************************************************
+** Class
+*****************************************************************************/
 
-  class QNode : public QThread
-  {
-    Q_OBJECT
-  public:
-    QNode(int argc, char** argv);
-    virtual ~QNode();
-    bool init();
-    void run();
+class QNode : public QThread
+{
+  Q_OBJECT
+public:
+  QNode(int argc, char** argv);
+  virtual ~QNode();
+  bool init();
+  void run();
 
-  Q_SIGNALS:
-    void rosShutdown();
+  std::vector<std::string> img_topic;
+  std::vector<ros::Subscriber> img_sub_v;
+  cv::Mat img_raw[3];
 
-  private:
-    int init_argc;
-    char** init_argv;
-  };
+  QStringList topicList;
 
-}  // namespace s
+  void changeTopic(int num);
+
+Q_SIGNALS:
+  void rosShutdown();
+  void sigRcvImg(int num);
+  void sigReadTopic();
+
+public Q_SLOTS:
+  void updateTopic();
+
+private:
+  int init_argc;
+  char** init_argv;
+
+  void camCallback(const sensor_msgs::ImageConstPtr& msg, int num);
+  void readParams();
+};
+
+}  // namespace robot_operator
 
 #endif /* robot_operator_QNODE_HPP_ */

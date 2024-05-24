@@ -32,13 +32,13 @@ color: white;</string>
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="cam_main">
+   <widget class="QLabel" name="img1">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>1000</width>
-      <height>500</height>
+      <x>50</x>
+      <y>60</y>
+      <width>1600</width>
+      <height>900</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -57,9 +57,9 @@ color: white;</string>
    <widget class="QLabel" name="img_size_main">
     <property name="geometry">
      <rect>
-      <x>935</x>
-      <y>500</y>
-      <width>91</width>
+      <x>1460</x>
+      <y>925</y>
+      <width>190</width>
       <height>31</height>
      </rect>
     </property>
@@ -90,9 +90,9 @@ color: white;</string>
    <widget class="QLabel" name="fps_main">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>500</y>
-      <width>81</width>
+      <x>90</x>
+      <y>926</y>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
@@ -123,9 +123,9 @@ color: white;</string>
    <widget class="QLabel" name="label_main_cam_title">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>30</y>
-      <width>1000</width>
+      <width>1600</width>
       <height>32</height>
      </rect>
     </property>
@@ -153,11 +153,11 @@ color: White;</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_fps_main_cam">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>500</y>
+      <x>50</x>
+      <y>926</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -186,58 +186,317 @@ color: white;</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QTabWidget" name="cam_tab">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>550</y>
-      <width>1000</width>
-      <height>600</height>
+      <y>970</y>
+      <width>820</width>
+      <height>550</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(106,111,107);
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="img_size_2">
+     <property name="geometry">
+      <rect>
+       <x>618</x>
+       <y>505</y>
+       <width>190</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(106,111,107);
 font: 11pt;
-color: White;</string>
-    </property>
-    <property name="tabShape">
-     <enum>QTabWidget::Rounded</enum>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="cam2">
-     <attribute name="title">
-      <string>cam2</string>
-     </attribute>
+color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
     </widget>
-    <widget class="QWidget" name="cam3">
-     <attribute name="title">
-      <string>cam3</string>
-     </attribute>
+    <widget class="QComboBox" name="topic_img2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>33</y>
+       <width>800</width>
+       <height>50</height>
+      </rect>
+     </property>
     </widget>
-    <widget class="QWidget" name="cam4">
-     <attribute name="title">
-      <string>cam4</string>
-     </attribute>
+    <widget class="QLabel" name="label2">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>508</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(46,52,54);
+font: 11pt;
+color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string>FPS</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
     </widget>
-    <widget class="QWidget" name="cam5">
-     <attribute name="title">
-      <string>cam5</string>
-     </attribute>
+    <widget class="QLabel" name="img2">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>90</y>
+       <width>800</width>
+       <height>450</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
     </widget>
-    <widget class="QWidget" name="cam6">
-     <attribute name="title">
-      <string>cam6</string>
-     </attribute>
+    <widget class="QLabel" name="fps_2">
+     <property name="geometry">
+      <rect>
+       <x>53</x>
+       <y>508</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
     </widget>
+    <zorder>img2</zorder>
+    <zorder>img_size_2</zorder>
+    <zorder>topic_img2</zorder>
+    <zorder>label2</zorder>
+    <zorder>fps_2</zorder>
    </widget>
-   <zorder>cam_tab</zorder>
-   <zorder>cam_main</zorder>
-   <zorder>img_size_main</zorder>
-   <zorder>fps_main</zorder>
-   <zorder>label_main_cam_title</zorder>
-   <zorder>label_fps_main_cam</zorder>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>970</y>
+      <width>820</width>
+      <height>550</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="img_size_3">
+     <property name="geometry">
+      <rect>
+       <x>618</x>
+       <y>505</y>
+       <width>190</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="topic_img3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>33</y>
+       <width>800</width>
+       <height>50</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label3">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>508</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(46,52,54);
+font: 11pt;
+color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string>FPS</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="img3">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>90</y>
+       <width>800</width>
+       <height>450</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fps_3">
+     <property name="geometry">
+      <rect>
+       <x>53</x>
+       <y>508</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <zorder>img3</zorder>
+    <zorder>img_size_3</zorder>
+    <zorder>topic_img3</zorder>
+    <zorder>label3</zorder>
+    <zorder>fps_3</zorder>
+   </widget>
+   <widget class="QPushButton" name="update">
+    <property name="geometry">
+     <rect>
+      <x>845</x>
+      <y>1002</y>
+      <width>20</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <action name="action_Quit">
    <property name="text">
