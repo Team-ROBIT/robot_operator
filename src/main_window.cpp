@@ -36,6 +36,30 @@ MainWindow::MainWindow(int argc, char** argv, QWidget* parent) : QMainWindow(par
   QObject::connect(&qnode, SIGNAL(sigReadTopic()), this, SLOT(slotUpdateTopic()));
   qnode.updateTopic();
   init = true;
+
+  // rviz simulation
+  QString pathr1 = QString::fromStdString(qnode.rviz_path);
+  rviz_frame_ = new rviz::VisualizationFrame();
+  rviz_frame_->setParent(ui.rvizFrame_simulation);
+  rviz_frame_->initialize(pathr1);
+  rviz_frame_->setSplashPath("");
+  rviz_frame_->setHideButtonVisibility(false);
+  rviz_manager_ = rviz_frame_->getManager();
+  QVBoxLayout* frameLayout = new QVBoxLayout(ui.rvizFrame_simulation);
+  frameLayout->addWidget(rviz_frame_);
+  rviz_frame_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+  // rviz SLAM
+  QString pathr2 = QString::fromStdString(qnode.rviz_path2);
+  rviz_frame_2 = new rviz::VisualizationFrame();
+  rviz_frame_2->setParent(ui.rvizFrame_slam);
+  rviz_frame_2->initialize(pathr2);
+  rviz_frame_2->setSplashPath("");
+  rviz_frame_2->setHideButtonVisibility(false);
+  rviz_manager_2 = rviz_frame_2->getManager();
+  QVBoxLayout* frameLayout2 = new QVBoxLayout(ui.rvizFrame_slam);
+  frameLayout2->addWidget(rviz_frame_2);
+  rviz_frame_2->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 
 MainWindow::~MainWindow()
@@ -46,20 +70,42 @@ void MainWindow::slotUpdateImage(int num)
 {
   QImage qImage((const unsigned char*)(qnode.img_raw[num].data), qnode.img_raw[num].cols, qnode.img_raw[num].rows,
                 QImage::Format_RGB888);
+  QPixmap qPixmap = QPixmap::fromImage(qImage.rgbSwapped());
+
+  QLabel* targetLabel = nullptr;
+  QLabel* targetFps = nullptr;
+  QLabel* targetSize = nullptr;
+
   switch (num)
   {
     case 0:
-      ui.img1->setPixmap(QPixmap::fromImage(qImage));
+      targetLabel = ui.img1;
+      targetFps = ui.fps_main;
+      targetSize = ui.img_size_main;
       break;
     case 1:
-      ui.img2->setPixmap(QPixmap::fromImage(qImage));
+      targetLabel = ui.img2;
+      targetFps = ui.fps_2;
+      targetSize = ui.img_size_2;
       break;
     case 2:
-      ui.img3->setPixmap(QPixmap::fromImage(qImage));
+      targetLabel = ui.img3;
+      targetFps = ui.fps_3;
+      targetSize = ui.img_size_3;
       break;
     default:
       break;
   }
+
+  if (targetLabel)
+  {
+    qPixmap = qPixmap.scaled(targetLabel->size(), Qt::KeepAspectRatio);
+    targetLabel->setPixmap(qPixmap);
+    targetLabel->setAlignment(Qt::AlignCenter);
+  }
+
+  targetFps->setText(QString::number(qnode.fps[num] / qnode.img_count[num]));
+  targetSize->setText(QString::number(qnode.img_size[num]));
 }
 
 void MainWindow::slotUpdateTopic()
@@ -77,6 +123,7 @@ void MainWindow::on_topic_img2_currentIndexChanged(int index)
     QString topic = ui.topic_img2->currentText();
     qnode.img_topic[1] = topic.toStdString();
     qnode.changeTopic(1);
+    std::cout << "[robot_operator] Changed cam 2 topic to : " << topic.toStdString() << std::endl;
   }
 }
 
@@ -87,6 +134,7 @@ void MainWindow::on_topic_img3_currentIndexChanged(int index)
     QString topic = ui.topic_img3->currentText();
     qnode.img_topic[2] = topic.toStdString();
     qnode.changeTopic(2);
+    std::cout << "[robot_operator] Changed cam 3 topic to : " << topic.toStdString() << std::endl;
   }
 }
 

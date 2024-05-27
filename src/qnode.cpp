@@ -58,6 +58,10 @@ bool QNode::init()
         n.subscribe<sensor_msgs::Image>(img_topic[i], 1, boost::bind(&QNode::camCallback, this, _1, i)));
   }
 
+  rviz_path = ros::package::getPath("base_description");
+  rviz_path = rviz_path + "/launch/urdf.rviz";
+  rviz_path2 = ros::package::getPath("robot_operator");
+  rviz_path2 = rviz_path2 + "/rviz/slam.rviz";
   start();
   return true;
 }
@@ -67,16 +71,15 @@ void QNode::camCallback(const sensor_msgs::ImageConstPtr& msg, int num)
   cv_bridge::CvImagePtr cv_ptr;
   cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
   img_raw[num] = cv_ptr->image;
-  switch (num)
+  img_size[num] = msg->data.size();
+  if (img_count[num] > 0)
   {
-    case 0:
-      cv::resize(img_raw[num], img_raw[num], cv::Size(MAIN_WEIGHT, MAIN_HEIGHT), 0, 0, CV_INTER_LINEAR);
-      break;
-
-    default:
-      cv::resize(img_raw[num], img_raw[num], cv::Size(SUB_WEIGHT, SUB_HEIGHT), 0, 0, CV_INTER_LINEAR);
-      break;
+    ros::Duration duration = msg->header.stamp - last_img_time[num];
+    double vFps = 1.0 / duration.toSec();
+    fps[num] += vFps;
   }
+  last_img_time[num] = msg->header.stamp;
+  img_count[num]++;
   Q_EMIT sigRcvImg(num);
 }
 

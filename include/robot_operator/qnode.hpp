@@ -20,6 +20,7 @@
 //    https://bugreports.qt.io/browse/QTBUG-22829
 #ifndef Q_MOC_RUN
 #include <ros/ros.h>
+#include <ros/package.h>
 #endif
 #include <string>
 #include <QThread>
@@ -29,9 +30,9 @@
 #include <cv_bridge/cv_bridge.h>
 #include <QStringList>
 
-#define MAIN_WEIGHT 1600
+#define MAIN_WIDTH 1600
 #define MAIN_HEIGHT 900
-#define SUB_WEIGHT 800
+#define SUB_WIDTH 800
 #define SUB_HEIGHT 450
 
 namespace robot_operator
@@ -51,11 +52,22 @@ public:
 
   std::vector<std::string> img_topic;
   std::vector<ros::Subscriber> img_sub_v;
+  size_t img_size[3];
+  ros::Time last_img_time[3];
+  int img_count[3] = {
+    0,
+  };
+  float fps[3] = {
+    0,
+  };
   cv::Mat img_raw[3];
 
   QStringList topicList;
 
   void changeTopic(int num);
+
+  std::string rviz_path;
+  std::string rviz_path2;
 
 Q_SIGNALS:
   void rosShutdown();

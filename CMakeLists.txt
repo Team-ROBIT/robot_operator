@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   mobile_base_msgs
   cv_bridge
+  rviz
   )
 include_directories(${catkin_INCLUDE_DIRS}
   include/robot_operator

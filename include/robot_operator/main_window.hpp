@@ -18,6 +18,20 @@
 #include <QImage>
 #include <QString>
 
+#include "rviz/visualization_manager.h"
+#include "rviz/render_panel.h"
+#include "rviz/display.h"
+#include "rviz/default_plugin/map_display.h"
+#include "rviz/visualization_manager.h"
+#include "rviz/visualization_frame.h"
+#include "rviz/view_manager.h"
+#include "rviz/config.h"
+#include "rviz/yaml_config_reader.h"
+
+#include <QVBoxLayout>
+
+#include <ros/ros.h>
+
 /*****************************************************************************
 ** Namespace
 *****************************************************************************/
@@ -51,6 +65,16 @@ private:
   QNode qnode;
 
   bool init = false;
+
+  // rviz simulation
+  rviz::VisualizationFrame* rviz_frame_;
+  rviz::VisualizationManager* rviz_manager_;
+  rviz::ViewManager* view_manager_;
+
+  // rviz slam
+  rviz::VisualizationFrame* rviz_frame_2;
+  rviz::VisualizationManager* rviz_manager_2;
+  rviz::ViewManager* view_manager_2;
 };
 
 }  // namespace robot_operator
