@@ -110,10 +110,23 @@ void MainWindow::slotUpdateImage(int num)
 
 void MainWindow::slotUpdateTopic()
 {
+  ui.topic_img1->clear();
   ui.topic_img2->clear();
   ui.topic_img3->clear();
+  ui.topic_img1->addItems(qnode.topicList);
   ui.topic_img2->addItems(qnode.topicList);
   ui.topic_img3->addItems(qnode.topicList);
+}
+
+void MainWindow::on_topic_img1_currentIndexChanged(int index)
+{
+  if (init)
+  {
+    QString topic = ui.topic_img1->currentText();
+    qnode.img_topic[0] = topic.toStdString();
+    qnode.changeTopic(0);
+    std::cout << "[robot_operator] Changed cam 1 topic to : " << topic.toStdString() << std::endl;
+  }
 }
 
 void MainWindow::on_topic_img2_currentIndexChanged(int index)

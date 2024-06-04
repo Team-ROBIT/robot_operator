@@ -56,6 +56,7 @@ public Q_SLOTS:
   void slotUpdateImage(int num);
   void slotUpdateTopic();
 
+  void on_topic_img1_currentIndexChanged(int index);
   void on_topic_img2_currentIndexChanged(int index);
   void on_topic_img3_currentIndexChanged(int index);
   void on_update_clicked();

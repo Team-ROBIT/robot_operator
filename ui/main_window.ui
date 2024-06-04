@@ -349,7 +349,7 @@ color: white;</string>
       <x>30</x>
       <y>10</y>
       <width>1650</width>
-      <height>950</height>
+      <height>981</height>
      </rect>
     </property>
     <property name="title">
@@ -359,7 +359,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>1538</x>
-       <y>910</y>
+       <y>950</y>
        <width>80</width>
        <height>31</height>
       </rect>
@@ -392,7 +392,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>910</y>
+       <y>950</y>
        <width>41</width>
        <height>31</height>
       </rect>
@@ -425,7 +425,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>44</y>
+       <y>85</y>
        <width>1600</width>
        <height>900</height>
       </rect>
@@ -447,7 +447,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>910</y>
+       <y>950</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -509,17 +509,28 @@ color: White;</string>
       <bool>false</bool>
      </property>
     </widget>
+    <widget class="QComboBox" name="topic_img1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>1600</width>
+       <height>50</height>
+      </rect>
+     </property>
+    </widget>
     <zorder>img1</zorder>
     <zorder>img_size_main</zorder>
     <zorder>label</zorder>
     <zorder>fps_main</zorder>
     <zorder>label_main_cam_title</zorder>
+    <zorder>topic_img1</zorder>
    </widget>
    <widget class="QLabel" name="intelligence">
     <property name="geometry">
      <rect>
       <x>2050</x>
-      <y>1400</y>
+      <y>1430</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -544,7 +555,7 @@ color: White;</string>
     <property name="geometry">
      <rect>
       <x>2270</x>
-      <y>1400</y>
+      <y>1430</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -569,7 +580,7 @@ color: White;</string>
     <property name="geometry">
      <rect>
       <x>2160</x>
-      <y>1400</y>
+      <y>1430</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -594,7 +605,7 @@ color: White;</string>
     <property name="geometry">
      <rect>
       <x>2380</x>
-      <y>1400</y>
+      <y>1430</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -619,7 +630,7 @@ color: White;</string>
     <property name="geometry">
      <rect>
       <x>1780</x>
-      <y>1400</y>
+      <y>1430</y>
       <width>260</width>
       <height>100</height>
      </rect>
@@ -689,380 +700,6 @@ color: white;</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>1710</x>
-      <y>1020</y>
-      <width>321</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="1">
-      <widget class="QLabel" name="Track_Angular_label">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>2</number>
-       </property>
-       <property name="text">
-        <string>      Track_Angular</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QDoubleSpinBox" name="spd_linear">
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QDoubleSpinBox" name="spd_angular">
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_11">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>2</number>
-       </property>
-       <property name="text">
-        <string>        Track_Linear</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="gridLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>1710</x>
-      <y>1090</y>
-      <width>321</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_3">
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_21">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>2</number>
-       </property>
-       <property name="text">
-        <string>LL</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_13">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>2</number>
-       </property>
-       <property name="text">
-        <string>FL</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QDoubleSpinBox" name="flipper_fr">
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-       </property>
-       <property name="minimum">
-        <double>-95.000000000000000</double>
-       </property>
-       <property name="maximum">
-        <double>140.000000000000000</double>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLabel" name="label_23">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>2</number>
-       </property>
-       <property name="text">
-        <string>LR</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QDoubleSpinBox" name="flipper_fl">
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-       </property>
-       <property name="minimum">
-        <double>-95.000000000000000</double>
-       </property>
-       <property name="maximum">
-        <double>140.000000000000000</double>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QDoubleSpinBox" name="flipper_rl">
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-       </property>
-       <property name="minimum">
-        <double>-95.000000000000000</double>
-       </property>
-       <property name="maximum">
-        <double>110.000000000000000</double>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="3">
-      <widget class="QDoubleSpinBox" name="flipper_rr">
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-       </property>
-       <property name="minimum">
-        <double>-95.000000000000000</double>
-       </property>
-       <property name="maximum">
-        <double>110.000000000000000</double>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLabel" name="label_20">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>2</number>
-       </property>
-       <property name="text">
-        <string>FR</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="estop">
-    <property name="geometry">
-     <rect>
-      <x>2040</x>
-      <y>1020</y>
-      <width>130</width>
-      <height>130</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>ArrowCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(49,59,43);
-font: 11pt;
-color: white;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="../resources/images.qrc">
-      <normaloff>:/images/istop.png</normaloff>:/images/istop.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>200</width>
-      <height>200</height>
-     </size>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="isconnected">
-    <property name="geometry">
-     <rect>
-      <x>2340</x>
-      <y>1020</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: red;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="lineWidth">
-     <number>2</number>
-    </property>
-    <property name="text">
-     <string>false</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="openExternalLinks">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="usb2_size_9">
-    <property name="geometry">
-     <rect>
-      <x>2180</x>
-      <y>1020</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(106,111,107);
-font: 11pt;
-color: white;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="lineWidth">
-     <number>2</number>
-    </property>
-    <property name="text">
-     <string>   UDP Connection</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-    <property name="openExternalLinks">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="sub_log">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>2180</x>
-      <y>1060</y>
-      <width>312</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(49,59,43);
-font: 11pt;
-color: white;</string>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Message Received&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="img_size_main_3">
     <property name="geometry">
      <rect>
@@ -1112,6 +749,417 @@ color: white;</string>
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>1680</x>
+      <y>1020</y>
+      <width>831</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Basic Tool</string>
+     </attribute>
+     <widget class="QPushButton" name="estop">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>10</y>
+        <width>130</width>
+        <height>130</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(49,59,43);
+font: 11pt;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/images.qrc">
+        <normaloff>:/images/istop.png</normaloff>:/images/istop.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="sub_log">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>50</y>
+        <width>312</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(49,59,43);
+font: 11pt;
+color: white;</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Message Received&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="usb2_size_9">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>10</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="text">
+       <string>   UDP Connection</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="openExternalLinks">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>321</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: red;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>LL</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: red;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>FL</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QDoubleSpinBox" name="flipper_fr">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="minimum">
+          <double>-95.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>140.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_23">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: red;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>LR</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QDoubleSpinBox" name="flipper_fl">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="minimum">
+          <double>-95.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>140.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QDoubleSpinBox" name="flipper_rl">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="minimum">
+          <double>-95.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>110.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QDoubleSpinBox" name="flipper_rr">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="minimum">
+          <double>-95.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>110.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_20">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: red;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>FR</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>321</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QLabel" name="Track_Angular_label">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>      Track_Angular</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QDoubleSpinBox" name="spd_linear">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font: 11pt;
+color: black;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QDoubleSpinBox" name="spd_angular">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font: 11pt;
+color: black;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>        Track_Linear</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="isconnected">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>10</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: red;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="text">
+       <string>false</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="openExternalLinks">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Operation Tool</string>
+     </attribute>
+    </widget>
+   </widget>
+   <zorder>tabWidget</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>update</zorder>
+   <zorder>groupBox_3</zorder>
+   <zorder>intelligence</zorder>
+   <zorder>roka</zorder>
+   <zorder>kwu</zorder>
+   <zorder>kiro</zorder>
+   <zorder>label_2</zorder>
+   <zorder>rvizFrame_simulation</zorder>
+   <zorder>img_size_main_2</zorder>
+   <zorder>img_size_main_3</zorder>
+   <zorder>rvizFrame_slam</zorder>
   </widget>
   <action name="action_Quit">
    <property name="text">

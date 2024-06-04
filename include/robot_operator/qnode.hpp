@@ -30,6 +30,8 @@
 #include <cv_bridge/cv_bridge.h>
 #include <QStringList>
 
+#include "mobile_base_msgs/STMtx.h"
+
 #define MAIN_WIDTH 1600
 #define MAIN_HEIGHT 900
 #define SUB_WIDTH 800
