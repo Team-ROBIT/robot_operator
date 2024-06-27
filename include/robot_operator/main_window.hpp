@@ -55,7 +55,8 @@ public:
 public Q_SLOTS:
   void slotUpdateImage(int num);
   void slotUpdateTopic();
-  void slotUpdateState(float* rpm, float* flipper, bool* flipper_status);
+  void slotUpdateState();
+  void slotUpdateJoyMode(int mode);
 
   void on_topic_img1_currentIndexChanged(int index);
   void on_topic_img2_currentIndexChanged(int index);
@@ -79,7 +80,7 @@ private:
   rviz::VisualizationManager* rviz_manager_2;
   rviz::ViewManager* view_manager_2;
 
-  void setFlipperValueAndColor(QDoubleSpinBox* spinBox, double value, bool status);
+  void setFlipperValueAndColor(QLabel* label, double value, bool status);
 };
 
 }  // namespace robot_operator

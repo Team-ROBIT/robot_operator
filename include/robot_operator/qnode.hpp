@@ -30,6 +30,7 @@
 #include <cv_bridge/cv_bridge.h>
 #include <QStringList>
 #include <std_msgs/Bool.h>
+#include <std_msgs/Int32.h>
 #include "mobile_base_msgs/STMtx.h"
 
 #define MAIN_WIDTH 1600
@@ -72,11 +73,23 @@ public:
   std::string rviz_path;
   std::string rviz_path2;
 
+  float rpm[2] = {
+    0,
+  };
+  float flipper[4] = {
+    0,
+  };
+  bool flipper_status[4] = {
+    0,
+  };
+  bool light = false;
+
 Q_SIGNALS:
   void rosShutdown();
   void sigRcvImg(int num);
   void sigReadTopic();
-  void sigUpdateState(float* rpm, float* flipper, bool* flipper_status);
+  void sigUpdateState();
+  void sigUpdateJoyMode(int mode);
 
 public Q_SLOTS:
   void updateTopic();
@@ -87,6 +100,9 @@ private:
 
   ros::Subscriber robot_status;
   void stmTxDataCallback(const mobile_base_msgs::STMtxConstPtr& data);
+
+  ros::Subscriber joy_mode;
+  void joyModeCallback(const std_msgs::Int32ConstPtr& msg);
 
   ros::Publisher eStop;
 

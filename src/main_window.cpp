@@ -34,8 +34,8 @@ MainWindow::MainWindow(int argc, char** argv, QWidget* parent) : QMainWindow(par
   QObject::connect(&qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
   QObject::connect(&qnode, SIGNAL(sigRcvImg(int)), this, SLOT(slotUpdateImage(int)));
   QObject::connect(&qnode, SIGNAL(sigReadTopic()), this, SLOT(slotUpdateTopic()));
-  QObject::connect(&qnode, SIGNAL(sigUpdateState(float*, float*, bool*)), this,
-                   SLOT(slotUpdateState(float*, float*, bool*)));
+  QObject::connect(&qnode, SIGNAL(sigUpdateState()), this, SLOT(slotUpdateState()));
+  QObject::connect(&qnode, SIGNAL(sigUpdateJoyMode(int)), this, SLOT(slotUpdateJoyMode(int)));
   qnode.updateTopic();
   init = true;
 
@@ -120,18 +120,30 @@ void MainWindow::slotUpdateTopic()
   ui.topic_img3->addItems(qnode.topicList);
 }
 
-void MainWindow::slotUpdateState(float* rpm, float* flipper, bool* flipper_status)
+void MainWindow::slotUpdateState()
 {
-  ui.spd_L->setValue(rpm[0]);
-  ui.spd_R->setValue(rpm[1]);
-  ui.flipper_fl->setValue(flipper[0]);
-  ui.flipper_fr->setValue(flipper[2]);
-  ui.flipper_rl->setValue(flipper[1]);
-  ui.flipper_rr->setValue(flipper[3]);
-  setFlipperValueAndColor(ui.flipper_fl, flipper[0], flipper_status[0]);
-  setFlipperValueAndColor(ui.flipper_rl, flipper[1], flipper_status[1]);
-  setFlipperValueAndColor(ui.flipper_fr, flipper[2], flipper_status[2]);
-  setFlipperValueAndColor(ui.flipper_rr, flipper[3], flipper_status[3]);
+  ui.spd_L->setText(QString::number(qnode.rpm[0]));
+  ui.spd_R->setText(QString::number(qnode.rpm[1]));
+  setFlipperValueAndColor(ui.flipper_fl, qnode.flipper[0], qnode.flipper_status[0]);
+  setFlipperValueAndColor(ui.flipper_rl, qnode.flipper[1], qnode.flipper_status[1]);
+  setFlipperValueAndColor(ui.flipper_fr, qnode.flipper[2], qnode.flipper_status[2]);
+  setFlipperValueAndColor(ui.flipper_rr, qnode.flipper[3], qnode.flipper_status[3]);
+}
+
+void MainWindow::slotUpdateJoyMode(int mode)
+{
+  if (mode == 0)
+  {
+    ui.joy_mode->setText("NON INIT JOY");
+  }
+  else if (mode == 1)
+  {
+    ui.joy_mode->setText("BASE JOY");
+  }
+  else if (mode == 2)
+  {
+    ui.joy_mode->setText("MANIPULATOR");
+  }
 }
 
 void MainWindow::on_topic_img1_currentIndexChanged(int index)
@@ -179,16 +191,16 @@ void MainWindow::on_estop_clicked()
   qnode.emergencyStop();
 }
 
-void MainWindow::setFlipperValueAndColor(QDoubleSpinBox* spinBox, double value, bool status)
+void MainWindow::setFlipperValueAndColor(QLabel* label, double value, bool status)
 {
-  spinBox->setValue(value);
+  label->setText(QString::number(value));
   if (status)
   {
-    spinBox->setStyleSheet("QDoubleSpinBox { color: green; }");
+    label->setStyleSheet("QLabel { color: green; }");
   }
   else
   {
-    spinBox->setStyleSheet("QDoubleSpinBox { color: red; }");
+    label->setStyleSheet("QLabel { color: red; }");
   }
 }
 

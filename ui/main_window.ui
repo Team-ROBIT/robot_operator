@@ -915,21 +915,6 @@ color: red;</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="3">
-        <widget class="QDoubleSpinBox" name="flipper_fr">
-         <property name="styleSheet">
-          <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-         </property>
-         <property name="minimum">
-          <double>-95.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>140.000000000000000</double>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="2">
         <widget class="QLabel" name="label_23">
          <property name="layoutDirection">
@@ -954,51 +939,6 @@ color: red;</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QDoubleSpinBox" name="flipper_fl">
-         <property name="styleSheet">
-          <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-         </property>
-         <property name="minimum">
-          <double>-95.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>140.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QDoubleSpinBox" name="flipper_rl">
-         <property name="styleSheet">
-          <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-         </property>
-         <property name="minimum">
-          <double>-95.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>110.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QDoubleSpinBox" name="flipper_rr">
-         <property name="styleSheet">
-          <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
-         </property>
-         <property name="minimum">
-          <double>-95.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>110.000000000000000</double>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="2">
         <widget class="QLabel" name="label_20">
          <property name="layoutDirection">
@@ -1020,6 +960,54 @@ color: red;</string>
          </property>
          <property name="text">
           <string>FR</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="flipper_fl">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(254,254,254);
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="flipper_fr">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(254,254,254);
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="flipper_rl">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(254,254,254);
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="flipper_rr">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(254,254,254);
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="text">
+          <string/>
          </property>
         </widget>
        </item>
@@ -1063,20 +1051,17 @@ color: white;</string>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QDoubleSpinBox" name="spd_L">
+        <widget class="QLabel" name="spd_L">
          <property name="styleSheet">
-          <string notr="true">background-color: white;
+          <string notr="true">background-color: rgb(254,254,254);
 font: 11pt;
 color: black;</string>
          </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QDoubleSpinBox" name="spd_R">
-         <property name="styleSheet">
-          <string notr="true">background-color: white;
-font: 11pt;
-color: black;</string>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -1101,6 +1086,21 @@ color: white;</string>
          </property>
          <property name="text">
           <string>Left RPM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="spd_R">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(254,254,254);
+font: 11pt;
+color: black;</string>
+         </property>
+         <property name="text">
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1143,6 +1143,39 @@ color: red;</string>
       </property>
       <property name="openExternalLinks">
        <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="joy_mode">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>321</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(106,111,107);
+font: 11pt;
+color: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
