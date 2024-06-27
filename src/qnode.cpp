@@ -58,12 +58,30 @@ bool QNode::init()
         n.subscribe<sensor_msgs::Image>(img_topic[i], 1, boost::bind(&QNode::camCallback, this, _1, i)));
   }
 
+  robot_status = n.subscribe<mobile_base_msgs::STMtx>("STM_tx_data", 1, &QNode::stmTxDataCallback, this);
+  eStop = n.advertise<std_msgs::Bool>("ESTOP", 1);
+
   rviz_path = ros::package::getPath("base_description");
   rviz_path = rviz_path + "/launch/urdf.rviz";
   rviz_path2 = ros::package::getPath("robot_operator");
   rviz_path2 = rviz_path2 + "/rviz/slam.rviz";
   start();
   return true;
+}
+
+void QNode::stmTxDataCallback(const mobile_base_msgs::STMtxConstPtr& data)
+{
+  float rpm[2];
+  float flipper[4];
+  bool flipper_status[4];
+  rpm[0] = data->L_control.vel;
+  rpm[1] = data->R_control.vel;
+  for (int i = 0; i < 4; i++)
+  {
+    flipper_status[i] = data->flipper_control[i].init_req;
+    flipper[i] = data->flipper_control[i].target_pos;
+  }
+  Q_EMIT sigUpdateState(rpm, flipper, flipper_status);
 }
 
 void QNode::camCallback(const sensor_msgs::ImageConstPtr& msg, int num)
@@ -131,6 +149,13 @@ void QNode::updateTopic()
     ROS_ERROR("Failed to retrieve topics.");
     return;
   }
+}
+
+void QNode::emergencyStop()
+{
+  std_msgs::Bool msg;
+  msg.data = true;
+  eStop.publish(msg);
 }
 
 void QNode::changeTopic(int num)

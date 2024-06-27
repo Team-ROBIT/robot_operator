@@ -887,7 +887,7 @@ color: red;</string>
           <number>2</number>
          </property>
          <property name="text">
-          <string>LL</string>
+          <string>RL</string>
          </property>
         </widget>
        </item>
@@ -950,7 +950,7 @@ color: red;</string>
           <number>2</number>
          </property>
          <property name="text">
-          <string>LR</string>
+          <string>RR</string>
          </property>
         </widget>
        </item>
@@ -1055,12 +1055,15 @@ color: white;</string>
           <number>2</number>
          </property>
          <property name="text">
-          <string>      Track_Angular</string>
+          <string>Right RPM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QDoubleSpinBox" name="spd_linear">
+        <widget class="QDoubleSpinBox" name="spd_L">
          <property name="styleSheet">
           <string notr="true">background-color: white;
 font: 11pt;
@@ -1069,7 +1072,7 @@ color: black;</string>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QDoubleSpinBox" name="spd_angular">
+        <widget class="QDoubleSpinBox" name="spd_R">
          <property name="styleSheet">
           <string notr="true">background-color: white;
 font: 11pt;
@@ -1097,7 +1100,10 @@ color: white;</string>
           <number>2</number>
          </property>
          <property name="text">
-          <string>        Track_Linear</string>
+          <string>Left RPM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>

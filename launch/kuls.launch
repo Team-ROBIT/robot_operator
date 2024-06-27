@@ -7,5 +7,6 @@
 
   </node>
   <include file="$(find base_description)/launch/kuls.launch" />
+  <include file="$(find mobile_base_joy)/launch/joy.launch" />
 
 </launch>

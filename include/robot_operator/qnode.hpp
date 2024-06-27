@@ -29,7 +29,7 @@
 #include <boost/bind.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <QStringList>
-
+#include <std_msgs/Bool.h>
 #include "mobile_base_msgs/STMtx.h"
 
 #define MAIN_WIDTH 1600
@@ -67,6 +67,7 @@ public:
   QStringList topicList;
 
   void changeTopic(int num);
+  void emergencyStop();
 
   std::string rviz_path;
   std::string rviz_path2;
@@ -75,6 +76,7 @@ Q_SIGNALS:
   void rosShutdown();
   void sigRcvImg(int num);
   void sigReadTopic();
+  void sigUpdateState(float* rpm, float* flipper, bool* flipper_status);
 
 public Q_SLOTS:
   void updateTopic();
@@ -82,6 +84,11 @@ public Q_SLOTS:
 private:
   int init_argc;
   char** init_argv;
+
+  ros::Subscriber robot_status;
+  void stmTxDataCallback(const mobile_base_msgs::STMtxConstPtr& data);
+
+  ros::Publisher eStop;
 
   void camCallback(const sensor_msgs::ImageConstPtr& msg, int num);
   void readParams();
