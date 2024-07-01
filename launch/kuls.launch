@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="joy_type" default="deck" />  <!-- deck of ds4 -->]
+
   <node pkg="robot_operator" type="robot_operator" name="robot_operator" output="screen">
     <param name="cam1_topic" type="string" value="/camera_auto/usb_cam_auto/image_raw" />
     <param name="cam2_topic" type="string" value="/split_image/output/vertical00/horizontal00" />
     <param name="cam3_topic" type="string" value="/split_image/output/vertical00/horizontal01" />
-
   </node>
+  
   <include file="$(find base_description)/launch/kuls.launch" />
-  <include file="$(find mobile_base_joy)/launch/deck.launch" />
-
+  <include file="$(find mobile_base_udp)/launch/operator_udp.launch" />
+  <include file="$(find mobile_base_joy)/launch/$(arg joy_type).launch"/>
 </launch>
