@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/icon.png</file>
+        <file>images/111.png</file>
+        <file>images/121.png</file>
+        <file>images/333.png</file>
+        <file>images/444.png</file>
+        <file>images/555.png</file>
+        <file>images/666.png</file>
+        <file>images/army_logo.png</file>
+        <file>images/auto.png</file>
+        <file>images/Autumn.png</file>
+        <file>images/blue.png</file>
+        <file>images/defense_image.png</file>
+        <file>images/DS4.png</file>
+        <file>images/ert.png</file>
+        <file>images/hanhwa.png</file>
+        <file>images/intelligence.png</file>
+        <file>images/istop.png</file>
+        <file>images/kiro.png</file>
+        <file>images/KWU.png</file>
+        <file>images/logo.png</file>
+        <file>images/qwe.png</file>
+        <file>images/red.png</file>
+        <file>images/Robit LOGO3.jpg</file>
+        <file>images/Spring.png</file>
+        <file>images/sss.png</file>
+        <file>images/Summer.png</file>
+        <file>images/Winter.png</file>
+    </qresource>
+</RCC>
